@@ -1,0 +1,4 @@
+---
+# tasks file for hl_ovirt
+- import_tasks: create_vm_from_template.yml
+...
