@@ -1,0 +1,3 @@
+---
+# tasks file for remove_vm
+- import_tasks: remove_vm_from_host.yml

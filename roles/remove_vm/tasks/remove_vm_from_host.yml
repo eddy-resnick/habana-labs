@@ -1,0 +1,15 @@
+---
+# tasks file for hl_ovirt
+- name: Delete VM from host
+  ovirt_vm:
+    auth: "{{ ovirt_auth }}"
+    name: "{{ rhvm_vm_name }}"
+    template: "{{ rhvm_template }}"
+    cluster: "{{ cluster }}"
+    memory: "{{ vm_memory }}"
+    host: "{{ rhvm_sat_host }}"
+    high_availability: no
+    state: absent
+    wait: yes
+    cloud_init_persist: yes
+...
