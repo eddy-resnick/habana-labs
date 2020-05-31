@@ -16,4 +16,13 @@
       host_name: "{{ rhvm_vm_name }}"
       user_name: root
       root_password: "{{ rhvm_password }}"
+
+- name: Set hostname of VM
+  hostname:
+    name: "{{ rhvm_vm_name }}"
+
+- name: Set root password of VM
+  user:
+    name: root
+    update_password: "{{ rhvm_password }}"
 ...
