@@ -1,6 +1,6 @@
 ---
 - name: Deploy a static VM
-  hosts: kvm2.habana-labs.com
+#  hosts: kvm2.habana-labs.com
   connection: local
   gather_facts: false
 
