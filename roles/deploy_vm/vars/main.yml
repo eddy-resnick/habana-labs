@@ -1,5 +1,5 @@
 ---
-# vars file for hl_ovirt
+# vars file for deploy_vm
 rhvm_password: r3dh4t1!
 
 datacenter: "{{ rhvm_fqdn }}"
@@ -10,7 +10,7 @@ rhvm_fqdn: ovirtmanager.habana-labs.com
 rhvm_user: admin@internal
 rhvm_cafile: /etc/pki/ovirt-engine/ca.pem
 
-#rhvm_sat_host: kvm2.habana-labs.com
-rhvm_sat_host: sat-machines
-rhvm_vm_name: A0.habana-labs.com
-rhvm_template: Test-small_HPC
+rhvm_sat_host: 
+rhvm_vm_name: 
+rhvm_template: 
+rhvm_root_password: 

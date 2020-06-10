@@ -1,5 +1,5 @@
 ---
-# tasks file for hl_ovirt
+# tasks file for deploy_vm
 - name: Create and run VM from template
   ovirt_vm:
     auth: "{{ ovirt_auth }}"
@@ -13,16 +13,8 @@
     wait: yes
     cloud_init_persist: yes
     cloud_init:
-      host_name: "{{ rhvm_vm_name }}"
-      user_name: root
-      root_password: "{{ rhvm_password }}"
-
-- name: Set hostname of VM
-  hostname:
-    name: "{{ rhvm_vm_name }}"
-
-- name: Set root password of VM
-  user:
-    name: root
-    update_password: "{{ rhvm_password }}"
+      custom_script: |
+        preserve_hostname: false
+        host_name: "{{ rhvm_vm_name }}"
+        fqdn: "{{ rhvm_vm_name }}"
 ...
