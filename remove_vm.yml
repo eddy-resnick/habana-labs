@@ -1,6 +1,6 @@
 ---
 - name: Deploy a static VM
-  hosts: control.habana-labs.com
+  hosts: tower.habana-labs.com
   connection: local
   gather_facts: false
 
