@@ -5,7 +5,7 @@
     auth: "{{ ovirt_auth }}"
     name: "{{ rhvm_vm_name }}"
     template: "{{ rhvm_template }}"
-    cluster: "{{ cluster }}"
+    cluster: "{{ rhvm_cluster }}"
     memory: "{{ vm_memory }}"
     host: "{{ rhvm_sat_host }}"
     high_availability: no
@@ -15,6 +15,14 @@
     cloud_init:
       custom_script: |
         preserve_hostname: false
-        host_name: "{{ rhvm_vm_name }}"
+        hostname: "{{ rhvm_vm_name }}"
         fqdn: "{{ rhvm_vm_name }}"
+
+- name: Get info about new VM
+  ovirt_vm_info:
+    auth: "{{ ovirt_auth }}"
+    pattern: name="{{ rhvm_vm_name }}"
+  register: vm_details
+- debug:
+    msg: "{{ vm_details.ovirt_vms }}"
 ...

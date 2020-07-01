@@ -10,6 +10,7 @@ rhvm_fqdn: ovirtmanager.habana-labs.com
 rhvm_user: admin@internal
 rhvm_cafile: /etc/pki/ovirt-engine/ca.pem
 
+rhvm_cluster: HLS
 rhvm_sat_host: 
 rhvm_vm_name: 
 rhvm_template: 
