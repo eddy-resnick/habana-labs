@@ -23,6 +23,6 @@
     auth: "{{ ovirt_auth }}"
     pattern: name="{{ rhvm_vm_name }}"
   register: vm_details
-- debug:
-    msg: "{{ vm_details.ovirt_vms }}"
+#- debug:
+#    msg: "{{ vm_details.ovirt_vms }}"
 ...
