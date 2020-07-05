@@ -12,5 +12,5 @@
 
 - name: Update the DNS record
   command:
-    cmd: "/root/habana_labs/set_dns.sh -m add -s {{ dns_server }} -n {{ rhvm_vm_name }} -a {{ vm_ip }}"
+    cmd: "/var/lib/awx/habana-labs/set_dns.sh -m add -s {{ dns_server }} -n {{ rhvm_vm_name }} -a {{ vm_ip }}"
 ...
