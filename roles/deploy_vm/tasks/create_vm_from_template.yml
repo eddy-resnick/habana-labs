@@ -17,12 +17,3 @@
         preserve_hostname: false
         hostname: "{{ rhvm_vm_name }}"
         fqdn: "{{ rhvm_vm_name }}"
-
-- name: Get info about new VM
-  ovirt_vm_info:
-    auth: "{{ ovirt_auth }}"
-    pattern: name="{{ rhvm_vm_name }}"
-  register: vm_details
-#- debug:
-#    msg: "{{ vm_details.ovirt_vms }}"
-...

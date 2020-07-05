@@ -1,10 +1,11 @@
 ---
-# vars file for hl_ovirt
+# vars file for remove_vm
 rhvm_password: r3dh4t1!
 
 datacenter: "{{ rhvm_fqdn }}"
 cluster: Default
 vm_memory: 1GiB
+dns_server: 10.111.52.15
 
 rhvm_fqdn: ovirtmanager.habana-labs.com
 rhvm_user: admin@internal
@@ -14,3 +15,4 @@ rhvm_cluster: HLS
 rhvm_sat_host: 
 rhvm_vm_name: 
 rhvm_template: 
+rhvm_root_password: 

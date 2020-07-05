@@ -86,7 +86,7 @@ then
 	usage "Missing required parameter" 1
 fi
 
-#echo "ADDRESS=$ADDRESS | MODE=$MODE | DNS_SERVER=$DNS_SERVER"
+echo "ADDRESS=$ADDRESS | MODE=$MODE | DNS_SERVER=$DNS_SERVER"
 
 # Check valid IP addresses - needs more work
 # - only checks the structure and not the range from 1-254
@@ -98,4 +98,4 @@ then
 	usage "Invalid IP address $ADDRESS or $DNS_SERVER" 1
 fi
 
-echo -e "server $DNS_SERVER\nupdate $MODE $HOSTN 86400 A $ADDRESS\nsend\n" | nsupdate -v 
+echo -e "server $DNS_SERVER\nupdate $MODE $HOSTN 86400 A $ADDRESS\nsend\n" | nsupdate -v
