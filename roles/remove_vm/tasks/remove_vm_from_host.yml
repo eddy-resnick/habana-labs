@@ -13,7 +13,7 @@
 - name: Update the DNS record
   command:
     cmd: "set_dns.sh -m del -s {{ dns_server }} -n {{ rhvm_vm_name }} -a {{ vm_ip }}"
-    chdir: /root/habana-labs
+    chdir: /habana-labs
 
 - name: Delete VM from host
   ovirt_vm:
