@@ -1,20 +1,5 @@
 ---
 # tasks file for remove_vm
-- ovirt_nic_info:
-    auth: "{{ ovirt_auth }}"
-    vm: "{{ rhvm_vm_name }}"
-  register: vm_details
-
-- set_fact: vm_ip="{{ vm_details.ovirt_nics | json_query('[0].reported_devices[0].ips[?version==`v4`].address') | first }}"
-
-#- debug:
-#    msg: "IP for VM {{ rhvm_vm_name }} is {{ vm_ip }} to be set at {{ dns_server }}"
-
-- name: Update the DNS record
-  command:
-    cmd: "set_dns.sh -m del -s {{ dns_server }} -n {{ rhvm_vm_name }} -a {{ vm_ip }}"
-    chdir: /habana-labs
-
 - name: Delete VM from host
   ovirt_vm:
     auth: "{{ ovirt_auth }}"
