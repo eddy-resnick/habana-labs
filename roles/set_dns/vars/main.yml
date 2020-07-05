@@ -6,6 +6,7 @@ datacenter: "{{ rhvm_fqdn }}"
 cluster: Default
 vm_memory: 1GiB
 dns_server: 10.111.52.15
+dns_action: add
 
 rhvm_fqdn: ovirtmanager.habana-labs.com
 rhvm_user: admin@internal
