@@ -10,7 +10,7 @@
 #
 # Arguments:
 #	-a	IP address of host
-#	-h	Hostname of server to add / delete
+#	-h	Usage message
 #	-m	Mode: add / del
 #	-n	FQDN name
 #	-s	DNS server (name or IP address)
