@@ -1,12 +1,17 @@
 ---
 # tasks file for deploy_vm
+- set_fact: vm_memory_g="{{ vm_memory }}GiB"
+- debug:
+    msg: "vm_memory is {{ vm_memory_g }}"
+
 - name: Create and run VM from template
   ovirt_vm:
     auth: "{{ ovirt_auth }}"
     name: "{{ rhvm_vm_name }}"
     template: "{{ rhvm_template }}"
     cluster: "{{ rhvm_cluster }}"
-    memory: "{{ vm_memory }}"
+    cpu_cores: "{{ vm_cpus }}"
+    memory: "{{ vm_memory_g }}"
     host: "{{ rhvm_sat_host }}"
     high_availability: no
     state: running
