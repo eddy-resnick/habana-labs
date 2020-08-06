@@ -1,0 +1,23 @@
+---
+# tasks file for post_install_minicom
+- name: Copy RPM files for minicom
+  copy:
+    src: lockdev-1.0.4-0.13.20111007git.el7.x86_64.rpm
+    dest: /tmp/lockdev-1.0.4-0.13.20111007git.el7.x86_64.rpm
+- copy:
+    src: lrzsz-0.12.20-36.el7.x86_64.rpm
+    dest: /tmp/lrzsz-0.12.20-36.el7.x86_64.rpm
+- copy:
+    src: minicom-2.6.2-5.el7.x86_64.rpm
+    dest: /tmp/minicom-2.6.2-5.el7.x86_64.rpm
+
+- name: Install minicom
+  yum:
+    name: /tmp/lockdev-1.0.4-0.13.20111007git.el7.x86_64.rpm
+    state: present
+- yum:
+    name: /tmp/lrzsz-0.12.20-36.el7.x86_64.rpm
+    state: present
+- yum:
+    name: /tmp/minicom-2.6.2-5.el7.x86_64.rpm
+    state: present

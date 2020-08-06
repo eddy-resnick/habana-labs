@@ -1,0 +1,4 @@
+---
+# tasks file for deploy_vm
+- import_tasks: post_install_minicom.yml
+...
