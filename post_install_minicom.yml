@@ -1,6 +1,6 @@
 ---
 - name: Set DNS for VM
-  hosts: "{{ rhvm_sat_host }}"
+  hosts: localhost
   gather_facts: false
 
 #  vars:
