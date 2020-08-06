@@ -1,5 +1,5 @@
 ---
-# vars file for deploy_vm
+# vars file for start_vm
 rhvm_password: r3dh4t1!
 
 datacenter: "{{ rhvm_fqdn }}"

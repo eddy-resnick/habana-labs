@@ -17,3 +17,4 @@ rhvm_sat_host:
 rhvm_vm_name: 
 rhvm_template: 
 rhvm_root_password: 
+gaudi_slot:

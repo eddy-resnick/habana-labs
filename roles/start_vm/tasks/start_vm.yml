@@ -1,11 +1,8 @@
 ---
-# tasks file for deploy_vm
+# tasks file start_vm
 - set_fact: vm_memory_g="{{ vm_memory }}GiB"
 
-#- debug:
-#    msg: "vm_memory is {{ vm_memory_g }}"
-
-- name: Create and run VM from template
+- name: Start VM
   ovirt_vm:
     auth: "{{ ovirt_auth }}"
     name: "{{ rhvm_vm_name }}"

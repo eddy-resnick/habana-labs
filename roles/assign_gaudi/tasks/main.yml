@@ -1,4 +1,4 @@
 ---
-# tasks file for deploy_vm
+# tasks file for assign_gaudi
 - import_tasks: assign_gaudi.yml
 ...

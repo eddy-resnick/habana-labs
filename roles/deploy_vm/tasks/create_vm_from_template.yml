@@ -1,8 +1,9 @@
 ---
 # tasks file for deploy_vm
 - set_fact: vm_memory_g="{{ vm_memory }}GiB"
-- debug:
-    msg: "vm_memory is {{ vm_memory_g }}"
+
+#- debug:
+#    msg: "vm_memory is {{ vm_memory_g }}"
 
 - name: Create and run VM from template
   ovirt_vm:
@@ -14,7 +15,8 @@
     memory: "{{ vm_memory_g }}"
     host: "{{ rhvm_sat_host }}"
     high_availability: no
-    state: running
+    placement_policy: pinned
+    state: stopped
     wait: yes
     cloud_init_persist: yes
     cloud_init:
