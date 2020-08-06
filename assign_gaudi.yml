@@ -1,5 +1,5 @@
 ---
-- name: Deploy a static VM
+- name: Assign Gaudi to a VM
   hosts: localhost
   connection: local
   gather_facts: false

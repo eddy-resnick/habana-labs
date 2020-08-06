@@ -1,5 +1,5 @@
 ---
-- name: Start a VM
+- name: Gaudi list
   hosts: localhost
   connection: local
   gather_facts: false
@@ -11,11 +11,16 @@
   pre_tasks:
     - name: Log in to oVirt
       ovirt_auth:
+#        hostname: "{{ rhvm_fqdn }}"
+#        ca_file: "{{ rhvm_cafile | default(omit) }}"
+#        insecure: "{{ rhvm_insecure | default(omit) }}"
+#      tags:
+#        - always
         url: "{{ engine_url | default(omit) }}"
         username: "{{ engine_user | default(omit)}}"
         password: "{{ rhvm_password | default(omit)}}"
   roles:
-    - role: start_vm
+    - role: gaudi_list
 
   post_tasks:
   - name: Log out from oVirt
