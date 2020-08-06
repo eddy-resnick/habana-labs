@@ -1,0 +1,29 @@
+---
+# tasks file for deploy_vm
+- set_fact: vm_memory_g="{{ vm_memory }}GiB"
+
+#- debug:
+#    msg: "vm_memory is {{ vm_memory_g }}"
+
+- name: Create and run VM from template
+  ovirt_vm:
+    auth: "{{ ovirt_auth }}"
+    name: "{{ rhvm_vm_name }}"
+    template: "{{ rhvm_template }}"
+    cluster: "{{ rhvm_cluster }}"
+#    cpu_cores: "{{ vm_cpus }}"
+#    memory: "{{ vm_memory_g }}"
+#    host: "{{ rhvm_sat_host }}"
+#    high_availability: no
+#    placement_policy: pinned
+#    state: running
+#    wait: yes
+#    cloud_init_persist: yes
+#    cloud_init:
+#      custom_script: |
+#        preserve_hostname: false
+#        hostname: "{{ rhvm_vm_name }}"
+#        fqdn: "{{ rhvm_vm_name }}"
+    host_devices:
+      - name: "{{ gaudi_slot }}"
+        state: present

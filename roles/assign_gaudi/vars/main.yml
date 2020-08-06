@@ -1,0 +1,20 @@
+---
+# vars file for assign_gaudi
+rhvm_password: r3dh4t1!
+
+datacenter: "{{ rhvm_fqdn }}"
+cluster: Default
+dns_server: 10.111.52.15
+
+rhvm_fqdn: ovirtmanager.habana-labs.com
+rhvm_user: admin@internal
+rhvm_cafile: /etc/pki/ovirt-engine/ca.pem
+
+vm_cpus: 8
+vm_memory: 64
+rhvm_cluster: HLS
+rhvm_sat_host: 
+rhvm_vm_name: 
+rhvm_template: 
+rhvm_root_password: 
+gaudi_slot:
