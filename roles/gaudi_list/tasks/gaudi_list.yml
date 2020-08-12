@@ -1,9 +1,10 @@
 ---
-  - name: Copy generate_gaudi_addresses.sh to target
-    copy:
-      src: /habana-labs/generate_gaudi_addresses.sh
-      dest: /tmp/generate_gaudi_addresses.sh
-      mode: 0755    
-  - name: Run the script generate_gaudi_addresses.sh
-    script: /tmp/generate_gaudi_addresses.sh "{{ gaudi_pattern }}"
-    register: out
+- name: Copy generate_gaudi_addresses.sh to target
+  copy:
+    src: /habana-labs/generate_gaudi_addresses.sh
+    dest: /tmp/generate_gaudi_addresses.sh
+    mode: 0755    
+- name: Run the script generate_gaudi_addresses.sh
+  script: /tmp/generate_gaudi_addresses.sh "{{ gaudi_pattern }}"
+  register: gaudi
+- debug: var=gaudi.stdout_lines
