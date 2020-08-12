@@ -1,8 +1,7 @@
 ---
 - name: Allow login to all RHEV hosts
   hosts: localhost
-  become: true
-  gather_facts: true
+  gather_facts: false
   serial: "100%"
 
   roles:
