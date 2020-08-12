@@ -18,3 +18,4 @@ rhvm_vm_name:
 rhvm_template: 
 rhvm_root_password: 
 gaudi_slot:
+gaudi_pattern: acc

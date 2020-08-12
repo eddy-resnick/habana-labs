@@ -1,8 +1,8 @@
 ---
 - name: Gaudi list
-  hosts: localhost
-  connection: local
+  hosts: hosts
   gather_facts: false
+  become: true
 
   roles:
     - role: gaudi_list

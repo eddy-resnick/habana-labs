@@ -1,13 +1,4 @@
 ---
-#- name: Allow login to all RHEV hosts
-#  hosts: localhost
-#  become: true
-#  gather_facts: true
-#  serial: "100%"
-
-  - debug:
-      msg: "Name {{ rhvhost }}, Password {{ rhvm_password }}"
-
   - name: Perform ssh-copy-id to nodes
     shell: |
       set prompt "#|>|\\\$"
