@@ -1,0 +1,22 @@
+---
+#- name: Allow login to all RHEV hosts
+#  hosts: localhost
+#  become: true
+#  gather_facts: true
+#  serial: "100%"
+
+  - debug:
+      msg: "Name {{ rhvhost }}, Password {{ rhvm_password }}"
+
+  - name: Perform ssh-copy-id to nodes
+    shell: |
+      set prompt "#|>|\\\$"
+      spawn ssh-copy-id root@{{ rhvhost }}
+      expect "(yes/no)"
+      send "yes\n"
+      expect "password:"
+      send "{{ rhvm_password }}\n"
+      expect -re $prompt
+    args:
+      executable: /usr/bin/expect
+    register: response
