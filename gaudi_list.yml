@@ -1,6 +1,6 @@
 ---
 - name: Gaudi list
-  hosts: localhost
+  hosts: "{{ rhvm_sat_host }}"
   gather_facts: false
   become: true
 
