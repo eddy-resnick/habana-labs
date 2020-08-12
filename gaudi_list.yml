@@ -1,6 +1,6 @@
 ---
 - name: Gaudi list
-  hosts: hosts
+  hosts: localhost
   gather_facts: false
   become: true
 
