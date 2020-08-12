@@ -11,7 +11,7 @@
   - name: Perform ssh-copy-id to nodes
     shell: |
       set prompt "#|>|\\\$"
-      spawn ssh-copy-id root@{{ rhvhost }}
+      spawn ssh-copy-id -i /root/.ssh/id_rsa.pub root@{{ rhvhost }}
       expect "(yes/no)"
       send "yes\n"
       expect "password:"
