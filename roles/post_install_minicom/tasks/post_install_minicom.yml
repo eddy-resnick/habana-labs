@@ -21,3 +21,14 @@
 - yum:
     name: /tmp/minicom-2.6.2-5.el7.x86_64.rpm
     state: present
+
+- name: Cleanup minicom files
+  file:
+    path: /tmp/lockdev-1.0.4-0.13.20111007git.el7.x86_64.rpm
+    state: absent
+- file:
+    path: /tmp/lrzsz-0.12.20-36.el7.x86_64.rpm
+    state: absent
+- file:
+    path: /tmp/minicom-2.6.2-5.el7.x86_64.rpm
+    state: absent
