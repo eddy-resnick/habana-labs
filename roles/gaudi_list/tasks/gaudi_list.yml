@@ -5,6 +5,11 @@
     dest: /tmp/generate_gaudi_addresses.sh
     mode: 0755    
 - name: Run the script generate_gaudi_addresses.sh
-  script: /tmp/generate_gaudi_addresses.sh "{{ gaudi_pattern }}"
+#  script: /tmp/generate_gaudi_addresses.sh "{{ gaudi_pattern }}"
+  shell: /tmp/generate_gaudi_addresses.sh "{{ gaudi_pattern }}"
   register: gaudi
 - debug: var=gaudi.stdout_lines
+- name: Cleanup generate_gaudi_addresses.sh
+  file:
+    path: /tmp/generate_gaudi_addresses.sh
+    state: absent
