@@ -1,0 +1,13 @@
+---
+# tasks file for set_passthrough
+- name: Set passthrough (intel_iommu=on)
+  ovirt_host:
+    auth: "{{ ovirt_auth }}"
+    name: "{{ rhvm_sat_host }}"
+    cluster: "{{ rhvm_cluster }}"
+    address: "{{ rhvm_sat_host }}"
+    password: "{{ rhvm_password }}"
+    override_iptables: true
+    state: restarted
+    wait: yes
+

@@ -1,0 +1,8 @@
+---
+- name: Set kernel pass through (intel_iommu=on)
+  hosts: "{{ rhvm_sat_host }}"
+  gather_facts: false
+  become: true
+
+  roles:
+    - role: set_passthrough

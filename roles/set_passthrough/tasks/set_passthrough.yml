@@ -1,0 +1,8 @@
+---
+# tasks file for set_passthrough
+- name: Set passthrough (intel_iommu=on)
+  replace:
+    path: /etc/default/grub
+    regexp: 'quiet'
+    replace: 'quiet intel_iommu=on'
+- command: grub2-mkconfig -o /boot/grub2/grub.cfg
