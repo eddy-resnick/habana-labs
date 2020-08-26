@@ -1,6 +1,7 @@
 ---
 # tasks file for set_passthrough
 - name: Set passthrough (intel_iommu=on)
+  become: false
   ovirt_host:
     auth: "{{ ovirt_auth }}"
     name: "{{ rhvm_sat_host }}"
