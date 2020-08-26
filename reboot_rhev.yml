@@ -1,6 +1,6 @@
 ---
 - name: Reboot RHEV host
-  hosts: ssh-host
+  hosts: applab.habana-labs.com
   connection: local
   gather_facts: false
 #  become: true
