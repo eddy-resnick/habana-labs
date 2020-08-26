@@ -1,6 +1,7 @@
 ---
 - name: Reboot RHEV host
   hosts: localhost
+  connection: local
   gather_facts: false
 #  become: true
 
