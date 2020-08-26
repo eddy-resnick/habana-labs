@@ -1,6 +1,6 @@
 ---
 - name: Reboot RHEV host
-  hosts: "{{ ssh_host }}"
+  hosts: "{{ rhvm_sat_host }}"
   connection: local
   gather_facts: false
 #  become: true
