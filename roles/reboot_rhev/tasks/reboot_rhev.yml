@@ -1,6 +1,6 @@
 ---
-# tasks file for set_passthrough
-- name: Set passthrough (intel_iommu=on)
+# tasks file for reboot_rhev
+- name: Reboot RHEV host
   become: false
   ovirt_host:
     auth: "{{ ovirt_auth }}"
