@@ -1,6 +1,6 @@
 ---
 - name: Reboot RHEV host
-  hosts: applab.habana-labs.com
+  hosts: "{{ ssh_host }}"
   connection: local
   gather_facts: false
 #  become: true
