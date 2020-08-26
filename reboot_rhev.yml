@@ -1,6 +1,6 @@
 ---
 - name: Reboot RHEV host
-  hosts: localhost
+  hosts: ansible.habana-labs.com
   connection: local
   gather_facts: false
 #  become: true
