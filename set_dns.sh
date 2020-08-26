@@ -47,6 +47,7 @@ usage ()
 }
 
 NSUPDATE=`which nsupdate`
+DOMAINNAME="habana-labs.com"
 
 if [ $NSUPDATE == "" ] || [ ! -x $NSUPDATE ]
 then
@@ -98,4 +99,4 @@ then
 	usage "Invalid IP address $ADDRESS or $DNS_SERVER" 1
 fi
 
-echo -e "server $DNS_SERVER\nupdate $MODE $HOSTN 86400 A $ADDRESS\nsend\n" | nsupdate -v 
+echo -e "server $DNS_SERVER\nupdate $MODE ${HOSTN}.${DOMAINNAME} 86400 A $ADDRESS\nsend\n" | nsupdate -v 
