@@ -1,9 +1,11 @@
 ---
 - name: Reboot RHEV host
-  hosts: "{{ rhvm_sat_host }}"
+  hosts: localhost
   connection: local
   gather_facts: false
-#  become: true
+  become: true
+  become_user: ansible
+  become_method: su
 
   vars:
     engine_url: https://ovirtmanager.habana-labs.com/ovirt-engine/api
