@@ -1,0 +1,12 @@
+---
+# tasks file for reboot_rhev
+- name: Set Power Managemtn Agent for RHEV host
+  become: false
+  ovirt_host_pm:
+    auth: "{{ ovirt_auth }}"
+    name: "{{ rhvm_sat_host }}"
+    address: "{{ rhvm_bmc_ip }}"
+    username: "{{ bmc_user }}"
+    password: "{{ bmc_password }}"
+    type: ilo4
+

@@ -1,0 +1,27 @@
+---
+- name: Set Power Management Agent on  RHEV host
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    engine_url: https://ovirtmanager.habana-labs.com/ovirt-engine/api
+    engine_user: admin@internal
+
+  pre_tasks:
+    - name: Log in to oVirt
+      ovirt_auth:
+        url: "{{ engine_url | default(omit) }}"
+        username: "{{ engine_user | default(omit)}}"
+        password: "{{ rhvm_password | default(omit)}}"
+
+  roles:
+    - role: set_powermgmt
+
+  post_tasks:
+  - name: Log out from oVirt
+    ovirt_auth:
+      state: absent
+      ovirt_auth: "{{ ovirt_auth }}"
+    tags:
+      - always

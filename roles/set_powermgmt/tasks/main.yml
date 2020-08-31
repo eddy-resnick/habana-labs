@@ -1,0 +1,4 @@
+---
+# tasks file for reboot_rhev.yml
+- import_tasks: set_powermgmt.yml
+...
