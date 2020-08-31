@@ -9,4 +9,13 @@
     username: "{{ bmc_user }}"
     password: "{{ bmc_password }}"
     type: ilo4
-
+- ovirt_host:
+    auth: "{{ ovirt_auth }}"
+    name: "{{ rhvm_sat_host }}"
+    cluster: "{{ rhvm_cluster }}"
+    address: "{{ rhvm_sat_host }}"
+    password: "{{ rhvm_password }}"
+    override_iptables: true
+    power_management_enabled: yes
+    wait: yes
+...
