@@ -1,5 +1,5 @@
 ---
-# tasks file for reboot_rhev
+# tasks file for set_powermgmt.yml
 - name: Set Power Managemtn Agent for RHEV host
   become: false
   ovirt_host_pm:
@@ -17,5 +17,6 @@
     password: "{{ rhvm_password }}"
     override_iptables: true
     power_management_enabled: yes
+    kdump_integration: disabled
     wait: yes
 ...
