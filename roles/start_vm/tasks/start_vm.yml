@@ -8,6 +8,5 @@
     name: "{{ rhvm_vm_name }}"
     host: "{{ rhvm_sat_host }}"
     high_availability: no
-    placement_policy: pinned
     state: running
     wait: yes
