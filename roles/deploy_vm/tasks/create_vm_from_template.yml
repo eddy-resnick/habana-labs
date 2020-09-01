@@ -15,7 +15,7 @@
     memory: "{{ vm_memory_g }}"
     host: "{{ rhvm_sat_host }}"
     high_availability: no
-#    placement_policy: pinned
+    placement_policy: pinned
     state: stopped
     wait: yes
     cloud_init_persist: yes
