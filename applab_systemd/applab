@@ -1,0 +1,6 @@
+/var/log/applab_service.log {
+    missingok
+    notifempty
+    sharedscripts
+    size 1M
+}

@@ -1,0 +1,30 @@
+INTRODUCTION
+This README describes the working of the applab.service for systemd and how to install the pieces.
+
+CONTENTS
+   applab		Logrotate definition file
+   applab.service	systemd description file for the applab.service
+   applab_service.sh	The script that will start the applab application (python3)
+
+INSTALLATION
+   1) Copy the file applab.service to the directory /etc/systemd/system amd enable the service
+
+	# cp applab.service /etc/systemd/system
+	# chmod 644 /etc/systemd/system/applab.service
+`	# systemctl enable applab.service
+
+   2) Copy the script applab_service.sh /var/www/html
+
+	# cp applab_service.sh /var/www/html
+	# chmod 755 /var/www/html/applab_service.sh
+
+   3) Start the applab service
+
+	# systemctl start applab.service 
+
+   4) Define log rotation for the log files (make adjustments if necessary)
+
+	# cp applab /etc/logrotate.d
+
+NOTE
+   Log file: All the output from applab is sent to the file /var/log/applab_service.log

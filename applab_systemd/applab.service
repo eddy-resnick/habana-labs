@@ -1,0 +1,12 @@
+[Unit]
+Description=AppLab service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/var/www/html/applab_service.sh start
+TimeoutStartSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
