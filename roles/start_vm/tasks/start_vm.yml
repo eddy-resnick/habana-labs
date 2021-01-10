@@ -9,4 +9,5 @@
     host: "{{ rhvm_sat_host }}"
     high_availability: no
     state: running
+    timeout: 1800
     wait: yes
